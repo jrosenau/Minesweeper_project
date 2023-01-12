@@ -1,7 +1,5 @@
 package com.example.minesweeper_project;
 
-import com.example.minesweeper_project.HelloApplication;
-import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -12,10 +10,11 @@ public class Field extends StackPane {
 
     private int x;
     private int y;
-    private boolean hasBomb;
+    public boolean hasBomb;
     private String text = "";
     public Text bombCount;
     private Rectangle fieldNode = null;
+    public boolean gameOver = false;
 
     private boolean isOpen = false;
 
@@ -36,7 +35,7 @@ public class Field extends StackPane {
         this.hasBomb = hasBomb;
 
         //Create Node //Rectangle oder Button für Feld:
-        fieldNode = new Rectangle(HelloApplication.FIELD_SIZE - 2, HelloApplication.FIELD_SIZE - 2);
+        fieldNode = new Rectangle(MinesweeperApplication.FIELD_SIZE - 2, MinesweeperApplication.FIELD_SIZE - 2);
         fieldNode.setFill(Color.LIGHTBLUE);
         fieldNode.setStroke(Color.DARKBLUE);
         fieldNode.setVisible(true);
@@ -44,11 +43,6 @@ public class Field extends StackPane {
 
         bombCount = new Text();
         bombCount.setText(this.hasBomb ? "X" : ""); // => if else
-
-
-
-
-
 
 
 
@@ -61,16 +55,12 @@ public class Field extends StackPane {
 
 
         bombCount.setStroke(Color.DARKRED);
-        bombCount.setVisible(true); //field default not opened
-
-
-
-
+        bombCount.setVisible(false); //field default not opened
 
 
         getChildren().addAll(fieldNode, bombCount); //Die Verdeckung und die Eigenschaften auf das Fieldobjekt schicken
-        setTranslateX(x* HelloApplication.FIELD_SIZE);
-        setTranslateY(y*HelloApplication.FIELD_SIZE);
+        setTranslateX(x* MinesweeperApplication.FIELD_SIZE);
+        setTranslateY(y* MinesweeperApplication.FIELD_SIZE);
         setOnMouseClicked(e -> onFieldClicked(e));
 
 
@@ -81,21 +71,21 @@ public class Field extends StackPane {
         open();
     }
 
-
-
-
-
-        public void open(){
+    public void open(){
             if(this.isOpen)
                 return;
             this.isOpen = true;
             bombCount.setVisible(true);
             fieldNode.setFill(Color.LIGHTGRAY);
             if(bombCount.getText().isEmpty()){
-                HelloApplication.getNeighbours(this).forEach(Field::open);
+                MinesweeperApplication.getNeighbours(this).forEach(Field::open);
         }
 
+if(bombCount == "X" || bombCount =="x"){
+    gameOver = true;
 
+    closeGame();
+}
 
     }
 }

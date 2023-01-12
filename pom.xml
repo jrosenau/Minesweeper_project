@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.minesweeper_project/com.example.minesweeper_project.HelloApplication
+                                com.example.minesweeper_project/com.example.minesweeper_project.MinesweeperApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
