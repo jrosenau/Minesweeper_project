@@ -1,5 +1,6 @@
 package com.example.minesweeper_project;
 
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -68,7 +69,15 @@ public class Field extends StackPane {
         }
 
     private void onFieldClicked(MouseEvent e) {
-        open();
+        int
+        if(e.getButton() == MouseButton.PRIMARY){
+            open();
+        } else if(e.getButton() == MouseButton.SECONDARY){
+            while()
+
+            fieldNode.setFill(Color.YELLOWGREEN);
+        }
+
     }
 
     public void open(){
@@ -81,11 +90,11 @@ public class Field extends StackPane {
                 MinesweeperApplication.getNeighbours(this).forEach(Field::open);
         }
 
-if(bombCount == "X" || bombCount =="x"){
+/*if(bombCount == "X" || bombCount =="x"){
     gameOver = true;
 
     closeGame();
 }
 
-    }
-}
+    }*/
+}}

@@ -25,7 +25,7 @@ public class MinesweeperApplication extends Application {
     private Parent createField(){
         Pane root = new Pane();
         int counter = 0;
-        root.setPrefSize(320, 320);
+        root.setPrefSize(256, 256);
         //1. Durchlauf: Platzierung der Bomben
         for (int y = 0; y < Y_FIELDS; y++) {
             for (int x = 0; x < X_FIELDS; x++){
@@ -100,9 +100,9 @@ public class MinesweeperApplication extends Application {
 
     }
 
-    public void closeGame(Stage stage){
-        stage.hide();
-    }
+    //public void closeGame(Stage stage){
+    //    stage.hide();
+    //}
     public static void main(String[] args) {
         launch();
     }
