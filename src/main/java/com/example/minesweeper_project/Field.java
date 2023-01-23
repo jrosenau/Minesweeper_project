@@ -69,13 +69,17 @@ public class Field extends StackPane {
         }
 
     private void onFieldClicked(MouseEvent e) {
-        int
+
         if(e.getButton() == MouseButton.PRIMARY){
             open();
         } else if(e.getButton() == MouseButton.SECONDARY){
-            while()
 
-            fieldNode.setFill(Color.YELLOWGREEN);
+while(fieldNode.getFill() != Color.YELLOWGREEN){
+    fieldNode.setFill(Color.YELLOWGREEN);
+}
+
+        }else if(e.getButton() == MouseButton.SECONDARY && fieldNode.getFill() == Color.YELLOWGREEN){
+            fieldNode.setFill(Color.INDIANRED);
         }
 
     }
