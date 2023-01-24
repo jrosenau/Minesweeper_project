@@ -12,10 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MinesweeperApplication extends Application {
+   /*  public static final int Y_FIELDS = 8;
+    public static final int X_FIELDS = 8;
+    public static final int Y_FIELDS = 16;
+    public static final int X_FIELDS = 30;
+  */
 
     public static final int Y_FIELDS = 16;
     public static final int X_FIELDS = 16;
-
 
     private static com.example.minesweeper_project.Field [][] grid = new com.example.minesweeper_project.Field[X_FIELDS][Y_FIELDS];
     public static final int FIELD_SIZE = 16;
@@ -24,7 +28,7 @@ public class MinesweeperApplication extends Application {
 
     private Parent createField(){
         Pane root = new Pane();
-        int counter = 0;
+        int counter;
         root.setPrefSize(256, 256);
         //1. Durchlauf: Platzierung der Bomben
         for (int y = 0; y < Y_FIELDS; y++) {
@@ -35,7 +39,7 @@ public class MinesweeperApplication extends Application {
             }
         }
 
-        //2. Durchlauf: Ermitteln angrenzer Bomben für jedes Feld
+        //2. Durchlauf: Ermitteln angrenzender Bomben für jedes Feld
         for (int y = 0; y < Y_FIELDS; y++) {
             for (int x = 0; x < X_FIELDS; x++){
                 counter = 0;

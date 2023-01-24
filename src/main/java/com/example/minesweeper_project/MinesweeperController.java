@@ -3,7 +3,7 @@ package com.example.minesweeper_project;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class MinesweeperController {
     @FXML
     private Label welcomeText;
 

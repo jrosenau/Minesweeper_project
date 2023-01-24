@@ -74,12 +74,12 @@ public class Field extends StackPane {
             open();
         } else if(e.getButton() == MouseButton.SECONDARY){
 
-while(fieldNode.getFill() != Color.YELLOWGREEN){
+if(fieldNode.getFill() != Color.YELLOWGREEN){
     fieldNode.setFill(Color.YELLOWGREEN);
+}else{
+    fieldNode.setFill(Color.LIGHTBLUE);
 }
 
-        }else if(e.getButton() == MouseButton.SECONDARY && fieldNode.getFill() == Color.YELLOWGREEN){
-            fieldNode.setFill(Color.INDIANRED);
         }
 
     }
@@ -93,6 +93,7 @@ while(fieldNode.getFill() != Color.YELLOWGREEN){
             if(bombCount.getText().isEmpty()){
                 MinesweeperApplication.getNeighbours(this).forEach(Field::open);
         }
+
 
 /*if(bombCount == "X" || bombCount =="x"){
     gameOver = true;
