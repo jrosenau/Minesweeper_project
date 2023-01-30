@@ -1,14 +1,14 @@
 package com.example.minesweeper_project;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-
+/**
+ * The MinesweeperController class is the controller class for the Minesweeper game in JavaFX.
+ * <p>
+ * It provides the logic for the user interactions with the game.
+ *
+ * @author (Johannes Rosenauer)
+ * @version (30.01.2023)
+ */
 public class MinesweeperController {
-    @FXML
-    private Label welcomeText;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+
 }
